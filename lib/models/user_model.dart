@@ -11,6 +11,9 @@ class User extends Equatable {
     required this.avatar,
   });
 
+  @override
+  bool? get stringify => true;
+
   factory User.fromJson(String source) => User.fromMap(json.decode(source));
 
   factory User.fromMap(Map<String, dynamic> map) {
@@ -38,27 +41,6 @@ class User extends Equatable {
       lastName,
       avatar,
     ];
-  }
-
-  @override
-  String toString() {
-    return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatar: $avatar)';
-  }
-
-  User copyWith({
-    int? id,
-    String? email,
-    String? firstName,
-    String? lastName,
-    String? avatar,
-  }) {
-    return User(
-      id: id ?? this.id,
-      email: email ?? this.email,
-      firstName: firstName ?? this.firstName,
-      lastName: lastName ?? this.lastName,
-      avatar: avatar ?? this.avatar,
-    );
   }
 
   Map<String, dynamic> toMap() {

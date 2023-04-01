@@ -53,24 +53,6 @@ class ResponseModel extends Equatable {
     return 'ResponseModel(page: $page, perPage: $perPage, total: $total, totalPages: $totalPages, data: $data, support: $support)';
   }
 
-  ResponseModel copyWith({
-    int? page,
-    int? perPage,
-    int? total,
-    int? totalPages,
-    List<User>? data,
-    SupportModel? support,
-  }) {
-    return ResponseModel(
-      page: page ?? this.page,
-      perPage: perPage ?? this.perPage,
-      total: total ?? this.total,
-      totalPages: totalPages ?? this.totalPages,
-      data: data ?? this.data,
-      support: support ?? this.support,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return {
       'page': page,

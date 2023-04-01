@@ -27,16 +27,6 @@ class SupportModel extends Equatable {
   @override
   String toString() => 'SupportModel(text: $text, url: $url)';
 
-  SupportModel copyWith({
-    String? text,
-    String? url,
-  }) {
-    return SupportModel(
-      text: text ?? this.text,
-      url: url ?? this.url,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return {
       'text': text,
